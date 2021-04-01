@@ -28,7 +28,7 @@ int main()
         {
 
             cin>>x;
-            if(x>9||x<0)
+            if(x>9||x<0)        //Checking whether the input's among the number keys only. 
             {
                 cout<<"\nInvalid input! Try again : ";
                 continue;
@@ -56,8 +56,9 @@ int main()
             break;
     }
     a[a1][b1]=1;
+        
     cout<<"\n";
-    for(i=0;i<3;i++)
+    for(i=0;i<3;i++)           //Creating a simple tictactoe UI in the output screen
     {
         cout<<"     |     |    \n";
         for(j=0;j<3;j++)
@@ -73,9 +74,10 @@ int main()
         cout<<"\n_____|_____|_____\n";
     }
     cout<<"\n";
+        
     for(i=0;i<8;i++)
         ar[i]=0;
-    for(i=0;i<3;i++)
+    for(i=0;i<3;i++)        //Adding all the lines including all the horizontal, vertical and the diagonal lines.
         {
                 ar[0]+=a[i][0];
                 ar[1]+=a[i][1];
@@ -84,8 +86,9 @@ int main()
                 ar[4]+=a[1][i];
                 ar[5]+=a[2][i];
         }
-        for(i=0;i<3;i++)
-            for(j=0;j<3;j++)
+        
+        for(i=0;i<3;i++)        //Checking wheather a player won due to the same sign in any of the diagonals
+            for(j=0;j<3;j++)    
             {
                 if(i==j)
                     ar[6]+=a[i][j];
@@ -96,17 +99,6 @@ int main()
         if(ar[i]==3)
             cnt1++;
 
-     /*cout<<"Array: ";
-    for(i=0;i<8;i++)
-        cout<<ar[i]<<" ";
-    cout<<"\n";
-    cout<<"\n\n cnt1 = "<<cnt1<<"\t cnt2 = "<<cnt2<<"\n\n";
-        for(i=0;i<3;i++)
-        {
-            for(j=0;j<3;j++)
-                cout<<a[i][j]<<" ";
-                cout<<endl;
-        }*/
     if(cnt1>0)
     {
         cout<<"\nPlayer 1 Wins!\n";
